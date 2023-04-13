@@ -1,0 +1,10 @@
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\presentación.exe.config
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\presentación.exe
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\presentación.pdb
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.csproj.AssemblyReference.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.csproj.SuggestedBindingRedirects.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.Properties.Resources.resources
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.csproj.GenerateResource.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.csproj.CoreCompileInputs.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.exe
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.pdb
