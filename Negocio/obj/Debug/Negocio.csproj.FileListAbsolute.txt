@@ -1,0 +1,11 @@
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\Negocio.dll
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\Negocio.pdb
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\DataAccess.dll
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\Domain.dll
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\DataAccess.pdb
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\bin\Debug\Domain.pdb
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\obj\Debug\Negocio.dll
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\Negocio\obj\Debug\Negocio.pdb
