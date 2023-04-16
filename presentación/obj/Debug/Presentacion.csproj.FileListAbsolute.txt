@@ -3,7 +3,6 @@ C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\pres
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\presentación.pdb
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
-C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.Form1.resources
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.Properties.Resources.resources
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
@@ -16,3 +15,5 @@ C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\Doma
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\Negocio.pdb
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\bin\Debug\DataAccess.pdb
 C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.frmCatalogo.resources
+C:\Users\julia\OneDrive\Desktop\TPFinalNivel2_Viera\presentación\obj\Debug\presentación.frmAgregarArticulo.resources

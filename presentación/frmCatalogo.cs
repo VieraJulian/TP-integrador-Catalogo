@@ -12,10 +12,10 @@ using Domain;
 
 namespace presentación
 {
-    public partial class Form1 : Form
+    public partial class frmCatalogo : Form
     {
         private List<Articulo> listaArticulos;
-        public Form1()
+        public frmCatalogo()
         {
             InitializeComponent();
         }
@@ -47,6 +47,12 @@ namespace presentación
             {
                 pbxArticle.Load("https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png");
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo agregar = new frmAgregarArticulo();
+            agregar.ShowDialog();
         }
     }
 }
