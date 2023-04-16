@@ -82,7 +82,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(922, 50);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(126, 28);
-            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -94,7 +94,7 @@
             this.cbxCategoria.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(129, 26);
-            this.cbxCategoria.TabIndex = 9;
+            this.cbxCategoria.TabIndex = 5;
             // 
             // txtBuscador
             // 
@@ -113,7 +113,7 @@
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(72, 18);
-            this.lblCategoria.TabIndex = 8;
+            this.lblCategoria.TabIndex = 10;
             this.lblCategoria.Text = "Categoría";
             // 
             // lblBuscador
@@ -124,7 +124,7 @@
             this.lblBuscador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscador.Name = "lblBuscador";
             this.lblBuscador.Size = new System.Drawing.Size(72, 18);
-            this.lblBuscador.TabIndex = 0;
+            this.lblBuscador.TabIndex = 6;
             this.lblBuscador.Text = "Buscador";
             // 
             // lblCampo
@@ -135,7 +135,7 @@
             this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(57, 18);
-            this.lblCampo.TabIndex = 2;
+            this.lblCampo.TabIndex = 7;
             this.lblCampo.Text = "Campo";
             // 
             // cbxMarca
@@ -146,7 +146,7 @@
             this.cbxMarca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(129, 26);
-            this.cbxMarca.TabIndex = 7;
+            this.cbxMarca.TabIndex = 4;
             // 
             // cbxCampo
             // 
@@ -156,7 +156,7 @@
             this.cbxCampo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(126, 26);
-            this.cbxCampo.TabIndex = 3;
+            this.cbxCampo.TabIndex = 2;
             // 
             // cbxCriterio
             // 
@@ -166,7 +166,7 @@
             this.cbxCriterio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(129, 26);
-            this.cbxCriterio.TabIndex = 5;
+            this.cbxCriterio.TabIndex = 3;
             // 
             // lblCriterio
             // 
@@ -176,7 +176,7 @@
             this.lblCriterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(56, 18);
-            this.lblCriterio.TabIndex = 4;
+            this.lblCriterio.TabIndex = 8;
             this.lblCriterio.Text = "Criterio";
             // 
             // lblMarca
@@ -187,7 +187,7 @@
             this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(50, 18);
-            this.lblMarca.TabIndex = 6;
+            this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca";
             // 
             // dgvArticulos
@@ -209,11 +209,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(37, 205);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(750, 526);
-            this.dgvArticulos.TabIndex = 1;
+            this.dgvArticulos.TabIndex = 6;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pbxArticle
@@ -233,7 +236,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 51);
-            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -245,7 +248,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 51);
-            this.btnModificar.TabIndex = 4;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
@@ -256,7 +259,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(122, 51);
-            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
@@ -267,7 +270,7 @@
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(122, 51);
-            this.btnDetalle.TabIndex = 6;
+            this.btnDetalle.TabIndex = 4;
             this.btnDetalle.Text = "Ver detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             // 
@@ -279,7 +282,7 @@
             this.lblCatalogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCatalogo.Name = "lblCatalogo";
             this.lblCatalogo.Size = new System.Drawing.Size(146, 37);
-            this.lblCatalogo.TabIndex = 7;
+            this.lblCatalogo.TabIndex = 0;
             this.lblCatalogo.Text = "Catálogo";
             // 
             // frmCatalogo
@@ -303,7 +306,7 @@
             this.MaximumSize = new System.Drawing.Size(1169, 879);
             this.Name = "frmCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Catálogo";
+            this.Text = "00";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

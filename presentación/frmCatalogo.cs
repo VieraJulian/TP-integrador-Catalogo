@@ -22,19 +22,35 @@ namespace presentación
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.Columns["imagenUrl"].Visible = false;
-            dgvArticulos.Columns["id"].Visible = false;
-
-            cargarImagen(listaArticulos[0].ImagenUrl);
+            cargar();
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(articuloSeleccionado.ImagenUrl);
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(articuloSeleccionado.ImagenUrl);
+            }
+        }
+
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                listaArticulos = negocio.listar();
+                dgvArticulos.DataSource = listaArticulos;
+                dgvArticulos.Columns["imagenUrl"].Visible = false;
+                dgvArticulos.Columns["id"].Visible = false;
+
+                cargarImagen(listaArticulos[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -53,6 +69,8 @@ namespace presentación
         {
             frmAgregarArticulo agregar = new frmAgregarArticulo();
             agregar.ShowDialog();
+
+            cargar();
         }
     }
 }

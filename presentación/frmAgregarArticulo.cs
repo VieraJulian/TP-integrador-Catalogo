@@ -35,6 +35,7 @@ namespace presentación
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                articulo.ImagenUrl = txtUrlImagen.Text;
 
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 negocio.agregar(articulo);
@@ -62,6 +63,22 @@ namespace presentación
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticuloAñadir.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticuloAñadir.Load("https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png");
             }
         }
     }

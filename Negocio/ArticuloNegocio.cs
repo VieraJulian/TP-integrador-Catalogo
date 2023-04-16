@@ -26,7 +26,13 @@ namespace Negocio
                     article.Codigo = (string)datos.Lector["codigo"];
                     article.Nombre = (string)datos.Lector["nombre"];
                     article.Descripcion = (string)datos.Lector["descripcion"];
-                    article.ImagenUrl = (string)datos.Lector["imagenUrl"];
+
+                    if (!(datos.Lector["imagenUrl"] is DBNull))
+                    {
+                        article.ImagenUrl = (string)datos.Lector["imagenUrl"];
+
+                    }
+
                     article.Precio = (decimal)datos.Lector["precio"];
                     article.Marca = new Marca();
                     article.Marca.Descripcion = (string)datos.Lector["marca"];
@@ -54,7 +60,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) VALUES (@Codigo, @Nombre, @Descripcion, @Precio, @IdMarca, @IdCategoria);");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria, ImagenUrl) VALUES (@Codigo, @Nombre, @Descripcion, @Precio, @IdMarca, @IdCategoria, @ImagenUrl);");
                 
                 datos.setearParametro("@Codigo", articulo.Codigo);
                 datos.setearParametro("@Nombre", articulo.Nombre);
@@ -62,6 +68,7 @@ namespace Negocio
                 datos.setearParametro("@Precio", articulo.Precio);
                 datos.setearParametro("@IdMarca", articulo.Marca.Id);
                 datos.setearParametro("@IdCategoria", articulo.Categoria.Id);
+                datos.setearParametro("ImagenUrl", articulo.ImagenUrl);
 
                 datos.ejecutarAccion();
             }
