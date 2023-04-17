@@ -17,12 +17,13 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT codigo, nombre, ARTICULOS.descripcion, imagenUrl, precio, MARCAS.Descripcion as marca, CATEGORIAS.Descripcion as categoria from ARTICULOS INNER JOIN MARCAS ON MARCAS.Id = ARTICULOS.IdMarca INNER JOIN CATEGORIAS ON CATEGORIAS.Id = ARTICULOS.IdCategoria;");
+                datos.setearConsulta("SELECT ARTICULOS.Id, codigo, nombre, ARTICULOS.descripcion, imagenUrl, precio, MARCAS.Descripcion as marca, CATEGORIAS.Descripcion as categoria, idMarca, idCategoria from ARTICULOS INNER JOIN MARCAS ON MARCAS.Id = ARTICULOS.IdMarca INNER JOIN CATEGORIAS ON CATEGORIAS.Id = ARTICULOS.IdCategoria;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulo article = new Articulo();
+                    article.Id = (int)datos.Lector["Id"];
                     article.Codigo = (string)datos.Lector["codigo"];
                     article.Nombre = (string)datos.Lector["nombre"];
                     article.Descripcion = (string)datos.Lector["descripcion"];
@@ -35,8 +36,10 @@ namespace Negocio
 
                     article.Precio = (decimal)datos.Lector["precio"];
                     article.Marca = new Marca();
+                    article.Marca.Id = (int)datos.Lector["idMarca"];
                     article.Marca.Descripcion = (string)datos.Lector["marca"];
                     article.Categoria = new Categoria();
+                    article.Categoria.Id = (int)datos.Lector["idCategoria"];
                     article.Categoria.Descripcion = (string)datos.Lector["categoria"];
 
                     lista.Add(article);
@@ -68,7 +71,7 @@ namespace Negocio
                 datos.setearParametro("@Precio", articulo.Precio);
                 datos.setearParametro("@IdMarca", articulo.Marca.Id);
                 datos.setearParametro("@IdCategoria", articulo.Categoria.Id);
-                datos.setearParametro("ImagenUrl", articulo.ImagenUrl);
+                datos.setearParametro("@ImagenUrl", articulo.ImagenUrl);
 
                 datos.ejecutarAccion();
             }
@@ -76,6 +79,35 @@ namespace Negocio
             {
 
                 throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void modificar(Articulo articulo)
+        {
+            DatabaseConnector datos = new DatabaseConnector();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, ImagenUrl = @ImagenUrl, Precio = @Precio WHERE Id = @Id;");
+
+                datos.setearParametro("@Codigo", articulo.Codigo);
+                datos.setearParametro("@Nombre", articulo.Nombre);
+                datos.setearParametro("@Descripcion", articulo.Descripcion);
+                datos.setearParametro("@Precio", articulo.Precio);
+                datos.setearParametro("@IdMarca", articulo.Marca.Id);
+                datos.setearParametro("@IdCategoria", articulo.Categoria.Id);
+                datos.setearParametro("@ImagenUrl", articulo.ImagenUrl);
+                datos.setearParametro("@Id", articulo.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             finally
             {

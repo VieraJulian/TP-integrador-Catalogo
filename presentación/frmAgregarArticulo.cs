@@ -14,9 +14,16 @@ namespace presentación
 {
     public partial class frmAgregarArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmAgregarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,9 +33,14 @@ namespace presentación
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                if (articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
@@ -37,10 +49,17 @@ namespace presentación
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 articulo.ImagenUrl = txtUrlImagen.Text;
 
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                negocio.agregar(articulo);
+                if (articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Artículo modificado exitosamente");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Artículo agregado exitosamente");
+                }
 
-                MessageBox.Show("Artículo agregado exitosamente");
                 Close();
             }
             catch (Exception ex)
@@ -57,7 +76,27 @@ namespace presentación
             try
             {
                 cboCategoria.DataSource = categoria.listar();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+
                 cboMarca.DataSource = marca.listar();
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtUrlImagen.Text = articulo.ImagenUrl;
+
+                    cargarImagen(articulo.ImagenUrl);
+
+                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                    cboMarca.SelectedValue = articulo.Marca.Id;
+
+                }
             }
             catch (Exception ex)
             {
