@@ -83,5 +83,30 @@ namespace presentación
 
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                DialogResult respuesta = MessageBox.Show("¿Quieres eliminar este artículo: " + '"' + seleccionado.Nombre + '"' + ", de manera permanente?", "Eliminar Artículo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.eliminar(seleccionado.Id);
+                    cargar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
     }
 }

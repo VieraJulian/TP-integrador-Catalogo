@@ -114,5 +114,26 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void eliminar(int id)
+        {
+            DatabaseConnector datos = new DatabaseConnector();
+
+            try
+            {
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id;");
+                datos.setearParametro("@Id", id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
