@@ -15,6 +15,7 @@ namespace presentación
     public partial class frmCatalogo : Form
     {
         private List<Articulo> listaArticulos;
+
         public frmCatalogo()
         {
             InitializeComponent();
@@ -22,7 +23,27 @@ namespace presentación
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
             cargar();
+
+            cboCampo.Items.Add("Sin seleccionar");
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Precio");
+            cboCampo.SelectedIndex = 0;
+
+            List<Marca> marcas = marcaNegocio.listar();
+            cboMarca.Items.Add("Sin seleccionar");
+            cboMarca.SelectedIndex = 0;
+            marcas.ForEach(m => cboMarca.Items.Add(m));
+
+            List<Categoria> categorias = categoriaNegocio.listar();
+            cboCategoria.Items.Add("Sin seleccionar");
+            cboCategoria.SelectedIndex = 0;
+            categorias.ForEach(c => cboCategoria.Items.Add(c));
+
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -107,6 +128,54 @@ namespace presentación
             }
 
 
+        }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Igual a");
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.SelectedIndex = 0;
+            }
+            else if (opcion == "Sin seleccionar")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Seleccione un campo");
+                cboCriterio.SelectedIndex = 0;
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Empieza con");
+                cboCriterio.Items.Add("Contiene");
+                cboCriterio.SelectedIndex = 0;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtBuscador.Text;
+                string marca = cboMarca.SelectedItem.ToString();
+                string categoria = cboCategoria.SelectedItem.ToString();
+
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
