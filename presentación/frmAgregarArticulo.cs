@@ -5,16 +5,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace presentación
 {
     public partial class frmAgregarArticulo : Form
     {
         private Articulo articulo = null;
+
+        private OpenFileDialog archivo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
@@ -58,6 +62,11 @@ namespace presentación
                 {
                     negocio.agregar(articulo);
                     MessageBox.Show("Artículo agregado exitosamente");
+                }
+
+                if (archivo != null && !(txtUrlImagen.Text.ToLower().Contains("http")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
                 }
 
                 Close();
@@ -109,6 +118,7 @@ namespace presentación
         {
             cargarImagen(txtUrlImagen.Text);
         }
+
         private void cargarImagen(string imagen)
         {
             try
@@ -118,6 +128,18 @@ namespace presentación
             catch (Exception ex)
             {
                 pbxArticuloAñadir.Load("https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
             }
         }
     }
