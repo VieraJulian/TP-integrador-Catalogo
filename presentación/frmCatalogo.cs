@@ -33,17 +33,6 @@ namespace presentación
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Precio");
             cboCampo.SelectedIndex = 0;
-
-            List<Marca> marcas = marcaNegocio.listar();
-            cboMarca.Items.Add("Sin seleccionar");
-            cboMarca.SelectedIndex = 0;
-            marcas.ForEach(m => cboMarca.Items.Add(m));
-
-            List<Categoria> categorias = categoriaNegocio.listar();
-            cboCategoria.Items.Add("Sin seleccionar");
-            cboCategoria.SelectedIndex = 0;
-            categorias.ForEach(c => cboCategoria.Items.Add(c));
-
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -157,17 +146,59 @@ namespace presentación
             }
         }
 
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex <= 0)
+            {
+                MessageBox.Show("Por favor, seleccione un campo para filtrar");
+                return true;
+            }
+
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtBuscador.Text))
+                {
+                    MessageBox.Show("El buscador esta vacío");
+                    return true;
+                }
+
+                if (!(soloNumeros(txtBuscador.Text)))
+                {
+                    MessageBox.Show("Solo se permiten números para filtrar por precio");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             try
             {
+                if (validarFiltro())
+                {
+                    return;
+                }
+           
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtBuscador.Text;
-                string marca = cboMarca.SelectedItem.ToString();
-                string categoria = cboCategoria.SelectedItem.ToString();
 
                 dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
 

@@ -209,9 +209,9 @@
             this.lblUrlImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrlImagen.Location = new System.Drawing.Point(156, 398);
             this.lblUrlImagen.Name = "lblUrlImagen";
-            this.lblUrlImagen.Size = new System.Drawing.Size(83, 18);
+            this.lblUrlImagen.Size = new System.Drawing.Size(60, 18);
             this.lblUrlImagen.TabIndex = 16;
-            this.lblUrlImagen.Text = "Url imagen:";
+            this.lblUrlImagen.Text = "Imagen:";
             // 
             // txtUrlImagen
             // 
