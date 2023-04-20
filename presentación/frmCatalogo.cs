@@ -33,6 +33,7 @@ namespace presentación
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Precio");
             cboCampo.SelectedIndex = 0;
+
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -85,13 +86,16 @@ namespace presentación
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-            frmAgregarArticulo modificar = new frmAgregarArticulo(seleccionado);
-            modificar.ShowDialog();
+                frmAgregarArticulo modificar = new frmAgregarArticulo(seleccionado);
+                modificar.ShowDialog();
 
-            cargar();
+                cargar();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -206,6 +210,20 @@ namespace presentación
             catch (Exception ex )
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                frmDetalle detalle = new frmDetalle(seleccionado);
+                detalle.ShowDialog();
+
+                cargar();
             }
         }
     }
