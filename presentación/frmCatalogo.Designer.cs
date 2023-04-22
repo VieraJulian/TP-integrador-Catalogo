@@ -165,7 +165,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(28, 159);
+            this.dgvArticulos.Location = new System.Drawing.Point(28, 168);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
@@ -178,7 +178,7 @@
             // pbxArticle
             // 
             this.pbxArticle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticle.Location = new System.Drawing.Point(883, 159);
+            this.pbxArticle.Location = new System.Drawing.Point(874, 168);
             this.pbxArticle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbxArticle.Name = "pbxArticle";
             this.pbxArticle.Size = new System.Drawing.Size(326, 326);
@@ -189,7 +189,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(28, 680);
+            this.btnAgregar.Location = new System.Drawing.Point(30, 684);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 51);
@@ -201,7 +201,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(167, 680);
+            this.btnModificar.Location = new System.Drawing.Point(169, 684);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 51);
@@ -213,7 +213,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(306, 680);
+            this.btnEliminar.Location = new System.Drawing.Point(308, 684);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(122, 51);
@@ -225,7 +225,7 @@
             // btnDetalle
             // 
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(883, 507);
+            this.btnDetalle.Location = new System.Drawing.Point(874, 510);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(122, 51);
@@ -237,6 +237,7 @@
             // lblCatalogo
             // 
             this.lblCatalogo.AutoSize = true;
+            this.lblCatalogo.BackColor = System.Drawing.Color.Transparent;
             this.lblCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCatalogo.Location = new System.Drawing.Point(23, 33);
             this.lblCatalogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -250,8 +251,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1243, 751);
+            this.ClientSize = new System.Drawing.Size(1232, 768);
             this.Controls.Add(this.lblCatalogo);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
@@ -264,7 +266,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1259, 790);
+            this.MaximumSize = new System.Drawing.Size(1248, 807);
             this.Name = "frmCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo";

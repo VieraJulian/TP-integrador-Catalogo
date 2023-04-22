@@ -154,6 +154,7 @@ namespace presentación
         {
             if (cboCampo.SelectedIndex <= 0)
             {
+                cargar();
                 MessageBox.Show("Por favor, seleccione un campo para filtrar");
                 return true;
             }
