@@ -66,14 +66,14 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1172, 63);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(1003, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(145, 26);
-            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -86,7 +86,8 @@
             this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(61, 18);
-            this.lblCampo.TabIndex = 7;
+            this.lblCampo.TabIndex = 0;
+            this.lblCampo.Tag = "false";
             this.lblCampo.Text = "Campo:";
             // 
             // txtBuscador
@@ -96,7 +97,7 @@
             this.txtBuscador.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBuscador.Name = "txtBuscador";
             this.txtBuscador.Size = new System.Drawing.Size(334, 24);
-            this.txtBuscador.TabIndex = 1;
+            this.txtBuscador.TabIndex = 2;
             // 
             // cboCampo
             // 
@@ -107,7 +108,7 @@
             this.cboCampo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(202, 26);
-            this.cboCampo.TabIndex = 2;
+            this.cboCampo.TabIndex = 0;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
             // cboCriterio
@@ -119,7 +120,7 @@
             this.cboCriterio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(202, 26);
-            this.cboCriterio.TabIndex = 3;
+            this.cboCriterio.TabIndex = 1;
             // 
             // lblBuscador
             // 
@@ -129,7 +130,7 @@
             this.lblBuscador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscador.Name = "lblBuscador";
             this.lblBuscador.Size = new System.Drawing.Size(45, 18);
-            this.lblBuscador.TabIndex = 6;
+            this.lblBuscador.TabIndex = 3;
             this.lblBuscador.Text = "Filtro:";
             // 
             // lblCriterio
@@ -140,7 +141,7 @@
             this.lblCriterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(60, 18);
-            this.lblCriterio.TabIndex = 8;
+            this.lblCriterio.TabIndex = 0;
             this.lblCriterio.Text = "Criterio:";
             // 
             // dgvArticulos
@@ -169,10 +170,12 @@
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersVisible = false;
+            this.dgvArticulos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(830, 501);
-            this.dgvArticulos.TabIndex = 6;
+            this.dgvArticulos.TabIndex = 3;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pbxArticle
@@ -193,7 +196,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 51);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -205,7 +208,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 51);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -217,7 +220,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(122, 51);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -229,7 +232,7 @@
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(122, 51);
-            this.btnDetalle.TabIndex = 4;
+            this.btnDetalle.TabIndex = 6;
             this.btnDetalle.Text = "Ver detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
@@ -243,7 +246,8 @@
             this.lblCatalogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCatalogo.Name = "lblCatalogo";
             this.lblCatalogo.Size = new System.Drawing.Size(154, 37);
-            this.lblCatalogo.TabIndex = 0;
+            this.lblCatalogo.TabIndex = 10;
+            this.lblCatalogo.Tag = "false";
             this.lblCatalogo.Text = "Catálogo";
             // 
             // frmCatalogo

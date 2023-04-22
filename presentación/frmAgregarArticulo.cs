@@ -69,6 +69,11 @@ namespace presentación
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
                 }
 
+                if (archivo == null)
+                {
+                    articulo.ImagenUrl = "";
+                }
+
                 Close();
             }
             catch (Exception ex)

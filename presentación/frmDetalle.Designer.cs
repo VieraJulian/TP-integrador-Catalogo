@@ -98,7 +98,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(451, 560);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(145, 44);
-            this.btnCerrar.TabIndex = 29;
+            this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -174,6 +174,7 @@
             this.lblNombreDetalle.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreDetalle.Location = new System.Drawing.Point(32, 190);
+            this.lblNombreDetalle.MaximumSize = new System.Drawing.Size(200, 100);
             this.lblNombreDetalle.Name = "lblNombreDetalle";
             this.lblNombreDetalle.Size = new System.Drawing.Size(0, 18);
             this.lblNombreDetalle.TabIndex = 39;
@@ -226,7 +227,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(288, 560);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(145, 44);
-            this.btnEliminar.TabIndex = 44;
+            this.btnEliminar.TabIndex = 0;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -236,6 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(631, 621);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblMarcaDetalle);

@@ -133,7 +133,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(368, 514);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(145, 44);
-            this.btnAceptar.TabIndex = 7;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -144,7 +144,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(532, 514);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 44);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -179,7 +179,7 @@
             this.cboMarca.Location = new System.Drawing.Point(31, 395);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(308, 26);
-            this.cboMarca.TabIndex = 5;
+            this.cboMarca.TabIndex = 4;
             // 
             // cboCategoria
             // 
@@ -189,7 +189,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(31, 464);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(308, 26);
-            this.cboCategoria.TabIndex = 6;
+            this.cboCategoria.TabIndex = 5;
             // 
             // lblAgregarArticulo
             // 
@@ -229,7 +229,7 @@
             this.txtUrlImagen.Location = new System.Drawing.Point(369, 127);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(308, 24);
-            this.txtUrlImagen.TabIndex = 4;
+            this.txtUrlImagen.TabIndex = 6;
             this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // btnAgregarImagen
@@ -238,7 +238,7 @@
             this.btnAgregarImagen.Location = new System.Drawing.Point(369, 157);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(308, 26);
-            this.btnAgregarImagen.TabIndex = 17;
+            this.btnAgregarImagen.TabIndex = 7;
             this.btnAgregarImagen.Text = "Subir imagen local";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
